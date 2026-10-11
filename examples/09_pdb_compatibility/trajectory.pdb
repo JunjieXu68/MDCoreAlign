@@ -1,0 +1,56 @@
+MODEL        1
+ATOM      1  CA  ALA A   1       0.000   0.000   0.000  1.00  0.00           C
+ATOM      2  CA  GLY A   2       1.500   0.100   0.000  1.00  0.00           C
+ATOM      3  CA  SER A   3       3.000  -0.050   0.100  1.00  0.00           C
+ATOM      4  CA  ASN A   4       4.500   0.000  -0.050  1.00  0.00           C
+ATOM      5  CA  LEU A   5       6.000   0.050   0.050  1.00  0.00           C
+ATOM      6  CA  ASP A   6       7.500  -0.100   0.000  1.00  0.00           C
+ATOM      7  CA  LYS A   7       9.000   0.000  -0.100  1.00  0.00           C
+ATOM      8  CA  TYR A   8      10.500   0.100   0.000  1.00  0.00           C
+TER
+ENDMDL
+MODEL        2
+ATOM      1  CA  ALA A   1       0.050   0.020   0.000  1.00  0.00           C
+ATOM      2  CA  GLY A   2       1.550   0.120   0.010  1.00  0.00           C
+ATOM      3  CA  SER A   3       3.050  -0.030   0.100  1.00  0.00           C
+ATOM      4  CA  ASN A   4       4.600   0.650  -0.050  1.00  0.00           C
+ATOM      5  CA  LEU A   5       6.100   0.700   0.050  1.00  0.00           C
+ATOM      6  CA  ASP A   6       7.550  -0.080   0.000  1.00  0.00           C
+ATOM      7  CA  LYS A   7       9.050   0.020  -0.100  1.00  0.00           C
+ATOM      8  CA  TYR A   8      10.550   0.120   0.000  1.00  0.00           C
+TER
+ENDMDL
+MODEL        3
+ATOM      1  CA  ALA A   1       0.100   0.000   0.020  1.00  0.00           C
+ATOM      2  CA  GLY A   2       1.600   0.100   0.010  1.00  0.00           C
+ATOM      3  CA  SER A   3       3.100  -0.050   0.120  1.00  0.00           C
+ATOM      4  CA  ASN A   4       4.700   1.150  -0.020  1.00  0.00           C
+ATOM      5  CA  LEU A   5       6.200   1.200   0.070  1.00  0.00           C
+ATOM      6  CA  ASP A   6       7.600  -0.100   0.020  1.00  0.00           C
+ATOM      7  CA  LYS A   7       9.100   0.000  -0.080  1.00  0.00           C
+ATOM      8  CA  TYR A   8      10.600   0.100   0.020  1.00  0.00           C
+TER
+ENDMDL
+MODEL        4
+ATOM      1  CA  ALA A   1       0.150  -0.010   0.000  1.00  0.00           C
+ATOM      2  CA  GLY A   2       1.650   0.090  -0.010  1.00  0.00           C
+ATOM      3  CA  SER A   3       3.150  -0.060   0.090  1.00  0.00           C
+ATOM      4  CA  ASN A   4       4.800   1.650  -0.030  1.00  0.00           C
+ATOM      5  CA  LEU A   5       6.300   1.700   0.060  1.00  0.00           C
+ATOM      6  CA  ASP A   6       7.650  -0.110   0.000  1.00  0.00           C
+ATOM      7  CA  LYS A   7       9.150  -0.010  -0.100  1.00  0.00           C
+ATOM      8  CA  TYR A   8      10.650   0.090   0.000  1.00  0.00           C
+TER
+ENDMDL
+MODEL        5
+ATOM      1  CA  ALA A   1       0.200   0.010   0.000  1.00  0.00           C
+ATOM      2  CA  GLY A   2       1.700   0.110   0.000  1.00  0.00           C
+ATOM      3  CA  SER A   3       3.200  -0.040   0.100  1.00  0.00           C
+ATOM      4  CA  ASN A   4       4.900   2.050  -0.050  1.00  0.00           C
+ATOM      5  CA  LEU A   5       6.400   2.100   0.050  1.00  0.00           C
+ATOM      6  CA  ASP A   6       7.700  -0.090   0.000  1.00  0.00           C
+ATOM      7  CA  LYS A   7       9.200   0.010  -0.100  1.00  0.00           C
+ATOM      8  CA  TYR A   8      10.700   0.110   0.000  1.00  0.00           C
+TER
+ENDMDL
+END

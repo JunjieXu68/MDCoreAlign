@@ -1,0 +1,38 @@
+# Python build and cache files
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+
+# Local virtual environments
+.venv/
+.venv-gpu-cu12/
+venv/
+env/
+
+# Large local data and generated benchmark outputs
+data/
+results/
+_tmp*/
+*.npy
+*.npz
+*.dcd
+*.xtc
+!examples/01_gromacs_xtc_cpu/trajectory.xtc
+!examples/02_pdb_xtc_cpu/trajectory.xtc
+*.trr
+*.nc
+*.pdb.gz
+
+# Local editor and OS files
+.DS_Store
+.idea/
+.vscode/
+
+# Logs
+*.log

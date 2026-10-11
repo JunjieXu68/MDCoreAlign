@@ -1,0 +1,21 @@
+exclude src/mdcorealign/benchmark_minimal.py
+exclude src/mdcorealign/experimental_gpu_batch.py
+exclude src/mdcorealign/experimental_stream.py
+exclude src/mdcorealign/experimental_throughput_v2.py
+exclude src/mdcorealign/guarded.py
+
+# Portable examples and regression inputs, not production trajectories.
+recursive-include examples *.md *.sh *.py *.pdb *.gro *.json
+include examples/01_gromacs_xtc_cpu/trajectory.xtc
+include examples/02_pdb_xtc_cpu/trajectory.xtc
+recursive-include tests *.py *.json
+recursive-include scripts *.py *.sh
+include THIRD_PARTY_NOTICES.md
+prune examples/toy_md/output
+prune examples/real_md_small/output
+
+recursive-include docs *.md
+include environment.yml
+include requirements-dev.txt
+include requirements-tested.txt
+include release_checklist.md

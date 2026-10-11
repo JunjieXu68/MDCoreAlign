@@ -1,0 +1,5 @@
+# Exact versions used for the DI-v4 standard product validation.
+# End users use the compatible ranges declared in pyproject.toml.
+numpy==2.4.6
+MDAnalysis==2.10.0
+gemmi==0.7.5

@@ -1,0 +1,8 @@
+-e .
+build>=1.2
+pytest>=8
+ruff>=0.12
+twine>=5
+matplotlib>=3.8
+h5py>=3.10
+mypy>=1.10

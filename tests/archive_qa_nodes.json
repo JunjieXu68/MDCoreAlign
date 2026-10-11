@@ -1,0 +1,470 @@
+{
+  "description": "Explicit frozen research QA tier; ordinary tests remain unmarked; no automatic skip or altered assertion. Run pytest -m archive_qa with local results fixtures.",
+  "tests": [
+    {
+      "nodeid": "tests/analysis/test_core_disagreement_sensitivity_v1.py::test_frozen_case_native_rounding_splits_and_frameworks",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/biological_core_validation_v1/analysis_config.json"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/database_scale_benchmark_v2/test_mdlovofit_addendum_runner.py::test_linear_projection_uses_frozen_domain_shapes_for_raw_manifest",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/database_scale_gpu_v1/d1_all_domain/d1_all_domain_matched.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/database_scale_benchmark_v2/test_mdlovofit_addendum_runner.py::test_real_long_manifest_is_locked_to_available_prefixes",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/database_scale_benchmark_v2/mdlovofit_comparison/manifests/mdlovofit_real_long_prefix_manifest_locked.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/scientific_evidence_upgrade_v1/test_scientific_evidence_upgrade.py::test_registered_mdcath_reproduction_stop_is_explicit",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/scientific_evidence_upgrade_v1/05_mdcath_rmsf_convention/audit_summary.json"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/scientific_evidence_upgrade_v1/test_scientific_evidence_upgrade.py::test_heldout_geometry_panel_is_complete_and_successful",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/scientific_evidence_upgrade_v1/07_heldout_geometry/pair_distance_results.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/scientific_evidence_upgrade_v1/test_scientific_evidence_upgrade.py::test_heldout_bootstrap_uses_domain_or_family_units",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/scientific_evidence_upgrade_v1/07_heldout_geometry/paired_method_summary.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/scientific_evidence_upgrade_v1/test_scientific_evidence_upgrade.py::test_budget_fidelity_production_and_unsupported_m8_are_explicit",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/scientific_evidence_upgrade_v1/08_budget_fidelity/validation_results.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/scientific_evidence_upgrade_v1/test_scientific_evidence_upgrade.py::test_empirical_complexity_preserves_all_frame_scaling",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/scientific_evidence_upgrade_v1/08_budget_fidelity/empirical_complexity.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/scientific_evidence_upgrade_v1/test_scientific_evidence_upgrade.py::test_integrated_narrative_and_figure_assets_are_complete",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/scientific_evidence_upgrade_v1/10_integrated_results/integration_summary.json"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_atlas_strict_single_thread_cpu_v1.py::test_locked_panel_has_expected_shape_and_prefixes",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/atlas_strict_single_thread_cpu_v1/01_panel/atlas_48_setting_manifest.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_atlas_strict_single_thread_cpu_v1.py::test_run_order_is_counterbalanced",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/atlas_strict_single_thread_cpu_v1/02_preregistration/run_order.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_atlas_strict_single_thread_cpu_v1.py::test_commands_share_input_and_do_not_materialise",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/atlas_strict_single_thread_cpu_v1/01_panel/atlas_48_setting_manifest.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_atlas_strict_single_thread_cpu_v1.py::test_preregistration_hash_file_lists_all_contracts",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/atlas_strict_single_thread_cpu_v1/02_preregistration/preregistration.sha256"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_atlas_untimed_export_recovery.py::test_prefetch_has_exact_original_64_export_identities",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/atlas_strict_single_thread_cpu_v1/01_panel/atlas_48_setting_manifest.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_atlas_untimed_export_recovery.py::test_prefetch_rejects_duplicate_setting_identity",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/atlas_strict_single_thread_cpu_v1/01_panel/atlas_48_setting_manifest.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_concept_cases_product_v2.py::test_locked_case_identity_scores_and_metrics_are_unchanged",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/concept_cases_product_v1/02_case_selection/selection_decision.json"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_concept_cases_product_v2.py::test_case_a_registered_regions_reproduce",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/concept_cases_product_v2/02_case_A/case_A_key_regions_v2.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_concept_cases_product_v2.py::test_case_b_principal_low_global_high_local_regions_reproduce",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/concept_cases_product_v2/03_case_B/case_B_key_regions_v2.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_concept_cases_product_v2.py::test_v1_path_size_and_hash_snapshot_is_still_valid",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/concept_cases_product_v2/00_audit/v1_baseline_manifest.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_concept_cases_product_v2.py::test_main_figures_and_captions_are_consistent",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/concept_cases_product_v2/01_concept_figure/fig1_method_concept_v2.pdf"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_concept_cases_product_v2.py::test_readme_first_screen_and_document_consistency",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/concept_cases_product_v2/05_product_docs/documentation_consistency_audit.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_final_quality_upgrade.py::FinalQualityUpgradeTest::test_optional_status_tables_are_explicit",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/final_quality_upgrade/external_md_mini_validation/external_md_mini_validation_summary.md"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_final_quality_upgrade.py::FinalQualityUpgradeTest::test_paper_text_required_caveats",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/final_quality_upgrade/paper_text_updates/*.md"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_final_quality_upgrade.py::FinalQualityUpgradeTest::test_preprocessing_final_schema_and_limitation",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/final_quality_upgrade/preprocessing_verification/pbc_centering_verification.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_final_quality_upgrade.py::FinalQualityUpgradeTest::test_reference_consensus_status_is_not_overclaimed",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/final_quality_upgrade/reference_consensus/reference_consensus_system_summary.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_final_quality_upgrade.py::FinalQualityUpgradeTest::test_temporal_final_classification",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/final_quality_upgrade/temporal_convergence/temporal_convergence_classification.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_final_quality_upgrade.py::FinalQualityUpgradeTest::test_user_readiness_reports_exist",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/final_quality_upgrade/user_readiness/clean_install_report.md"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_final_submission_upgrade.py::FinalSubmissionUpgradeTest::test_final_figure_data_and_paper_text",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/final_submission_upgrade/final_figures/table_user_recommendations.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_final_submission_upgrade.py::FinalSubmissionUpgradeTest::test_release_archive_has_no_blockers",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/final_submission_upgrade/release_archive/blockers.json"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_final_submission_upgrade.py::FinalSubmissionUpgradeTest::test_release_metadata_audit_schema",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/final_submission_upgrade/release_metadata/release_metadata_audit.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_final_submission_upgrade.py::FinalSubmissionUpgradeTest::test_reproducibility_capsule",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/final_submission_upgrade/reproducibility_capsule/reproduce_core_results_report.json"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_final_submission_upgrade.py::FinalSubmissionUpgradeTest::test_residue_consensus_unavailable_is_explicit",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/final_submission_upgrade/reference_consensus_residue_level/reference_consensus_residues.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_final_submission_upgrade.py::FinalSubmissionUpgradeTest::test_testpypi_pending_is_not_blocker",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/final_submission_upgrade/testpypi_validation/testpypi_validation_report.json"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_final_submission_upgrade.py::FinalSubmissionUpgradeTest::test_user_testing_template_schema",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/final_submission_upgrade/user_testing/user_feedback_template.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_md_trajectory_focus.py::MDTrajectoryFocusTest::test_preprocessing_manifest_and_per_frame_residuals",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/md_trajectory_focus/preprocessing_manifest/md_preprocessing_manifest.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_md_trajectory_focus.py::MDTrajectoryFocusTest::test_temporal_stride_length_reference_and_warm_schemas",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/md_trajectory_focus/temporal_block_stability/temporal_block_stability.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_md_trajectory_focus.py::MDTrajectoryFocusTest::test_text_updates_and_readiness_audit",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/md_trajectory_focus/paper_text_updates/result_md_trajectory_benchmark_update.md"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_paper_ready_analysis.py::PaperReadyAnalysisTest::test_diagnostics_trace_and_runtime_json_schema",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/diagnostics/alignment_traces_four_systems.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_paper_ready_analysis.py::PaperReadyAnalysisTest::test_final_statistics_output_schemas",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/final_statistics/trajectory_benchmark_statistics.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_paper_ready_analysis.py::PaperReadyAnalysisTest::test_paper_output_audit_passes",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/flexibility/figures/fig_rmsf_profiles_four_systems.pdf",
+        "results/flexibility/figures/fig_rmsf_profiles_four_systems.png",
+        "results/flexibility/figures/fig_mobility_vs_robust_rmsf.pdf",
+        "results/flexibility/figures/fig_core_vs_noncore_rmsf.pdf",
+        "results/flexibility/figures/figure_captions_draft.md",
+        "results/flexibility/figure_data/fig_rmsf_profiles.tsv",
+        "results/flexibility/figure_data/fig_mobility_vs_rmsf.tsv",
+        "results/flexibility/figure_data/fig_core_noncore_rmsf.tsv",
+        "results/final_statistics/trajectory_benchmark_statistics.tsv",
+        "results/final_statistics/pair_benchmark_statistics.tsv",
+        "results/final_statistics/nmr500_benchmark_statistics.tsv",
+        "results/higher_tier_external_baseline_theseus_formal/combined_theseus_formal_summary.csv",
+        "results/final_statistics/biology_support_statistics.tsv",
+        "results/final_multi_system_summary_20260603/final_baseline_breadth_hardtrim_summary.csv",
+        "results/ablation/regularization/regularization_ablation_four_systems.tsv",
+        "results/sensitivity/sensitivity_summary.tsv",
+        "results/diagnostics/alignment_traces_four_systems.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_paper_ready_analysis.py::PaperReadyAnalysisTest::test_parameter_sensitivity_grid_and_schema",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/sensitivity/sensitivity_summary.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_paper_ready_analysis.py::PaperReadyAnalysisTest::test_regularization_ablation_output_schema",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/ablation/regularization/regularization_ablation_four_systems.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_plot_formal_flexibility_profiles.py::FormalFlexibilityPlotTest::test_chain_splitting_for_nhaa_and_yiip",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/flexibility/nhaa_flexibility_profile.csv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_submission_critical_addendum.py::SubmissionCriticalAddendumTest::test_diagnostics_trace_runtime_and_nochange_validation",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/submission_critical/diagnostics_rerun/alignment_traces_four_systems.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_submission_critical_addendum.py::SubmissionCriticalAddendumTest::test_lambda_sensitivity_grid_schema_and_default_marking",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/submission_critical/lambda_sensitivity_rerun/lambda_sensitivity_rerun.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_submission_critical_addendum.py::SubmissionCriticalAddendumTest::test_readiness_audit_has_no_blockers",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/submission_critical/readiness_audit/submission_readiness_checklist.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_submission_critical_addendum.py::SubmissionCriticalAddendumTest::test_regularization_rerun_schema_and_method_completeness",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/submission_critical/regularization_rerun/regularization_rerun_four_systems.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_submission_critical_addendum.py::SubmissionCriticalAddendumTest::test_theseus_missing_validation_schema",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/submission_critical/theseus_reproducibility/theseus_rerun_or_validation.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_submission_critical_addendum.py::SubmissionCriticalAddendumTest::test_yiip_proxy_is_conservative",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/submission_critical/yiip_biology_proxy/yiip_proxy_summary.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_submission_polish.py::SubmissionPolishTest::test_final_submission_audit_has_no_blockers",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/submission_polish/final_submission_polish_checklist.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_submission_polish.py::SubmissionPolishTest::test_final_text_caveats_are_present",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/submission_polish/paper_text/limitations_final.md"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_submission_polish.py::SubmissionPolishTest::test_main_figure_data_schemas",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/submission_polish/main_figures/fig2_benchmark_summary.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_submission_polish.py::SubmissionPolishTest::test_preprocessing_verification_schema_and_caveat",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/submission_polish/preprocessing_verification/pbc_centering_verification.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_submission_polish.py::SubmissionPolishTest::test_temporal_convergence_classification_schema",
+      "reason": "Reads frozen research/manuscript artifacts; does not generate them",
+      "fixture_locations": [
+        "results/submission_polish/temporal_convergence/temporal_convergence_classification.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_concept_cases_product_v2.py::test_scatter_and_track_share_one_classifier_and_no_unregistered_split",
+      "reason": "Manuscript figure-generator source consistency; the generator embeds private manuscript text and is retained locally but excluded from public source delivery. This is archival presentation QA, not a runtime software regression.",
+      "fixture_locations": [
+        "scripts/concept_cases_product_v2/generate_revision.py",
+        "scripts/concept_cases_product_v2/case_interpretation.py"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_paper_ready_analysis.py::PaperReadyAnalysisTest::test_figure_data_tables_are_non_empty",
+      "reason": "Historical figure-data artifact QA; an absent directory previously allowed its unchanged glob loop to pass without checking any table. It is not portable software validation.",
+      "fixture_locations": [
+        "results/flexibility/figure_data/*.tsv"
+      ],
+      "original_assertions_preserved": true
+    }
+  ]
+}

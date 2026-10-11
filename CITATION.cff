@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use MDCoreAlign, please cite this software release."
+title: "MDCoreAlign: continuous-weight alignment and flexibility profiling for protein conformational ensembles"
+version: 0.1.0rc6
+license: MIT
+authors:
+  - name: "MDCoreAlign developers"
+abstract: "MDCoreAlign provides continuous stability-weight alignment, RMSF-aware flexibility profiling, flexible-segment detection, and purpose-based coordinate export."

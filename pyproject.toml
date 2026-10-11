@@ -1,0 +1,121 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mdcorealign"
+version = "0.1.0rc6"
+description = "Continuous-weight alignment and flexibility profiling for protein conformational ensembles"
+readme = "README.md"
+license = "MIT"
+authors = [
+  {name = "MDCoreAlign developers"},
+]
+requires-python = ">=3.11"
+keywords = [
+  "molecular-dynamics",
+  "protein-structure",
+  "superposition",
+  "RMSF",
+  "structural-bioinformatics",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = [
+  "numpy>=1.24",
+  "scipy>=1.10",
+  "MDAnalysis>=2.6",
+  "gemmi>=0.6.7",
+]
+
+[project.optional-dependencies]
+dev = [
+  "build>=1.2",
+  "pytest>=8",
+  "ruff>=0.12",
+  "twine>=5",
+  "matplotlib>=3.8",
+  "mypy>=1.10",
+  "h5py>=3.10",
+]
+docs = [
+  "matplotlib>=3.8",
+]
+# Backward-compatible aliases. I/O dependencies are part of the base product.
+external = []
+io = []
+cuda12 = [
+  "cupy-cuda12x>=13,<14",
+]
+mdcath = [
+  "h5py>=3.10",
+  "huggingface_hub>=0.24",
+  "matplotlib>=3.8",
+  "scipy>=1.10",
+]
+
+[project.scripts]
+mdcorealign = "mdcorealign.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["mdcorealign*", "mdsuperpose*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+  "archive_qa: requires preserved research/manuscript results; run separately with the listed fixtures",
+]
+norecursedirs = [
+  "results",
+  "data",
+  "dist",
+  "build",
+  ".git",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+extend-exclude = [
+  "results",
+  "data",
+  "build",
+  "dist",
+]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "B"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/cpu_optimisation_v1/test_fast_kabsch_cpu_v1.py" = ["E402"]
+"tests/test_fast_kabsch_equivalence.py" = ["E402"]
+"tests/test_mdsuperpose_*.py" = ["E402"]
+
+[tool.mypy]
+python_version = "3.11"
+follow_imports = "skip"
+ignore_missing_imports = true
+check_untyped_defs = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+
+# Follow-up: these dynamic orchestration modules require typed result protocols
+# and optional-backend stubs before their existing errors can be removed safely.
+[[tool.mypy.overrides]]
+module = [
+  "mdcorealign.cli",
+  "mdcorealign.contracts",
+  "mdcorealign.coordinate_export",
+  "mdcorealign.gpu_backend",
+]
+ignore_errors = true

@@ -1,0 +1,62 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test-build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install package
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install ".[dev]"
+
+      - name: Import and CLI smoke tests
+        run: |
+          python -c "import mdcorealign; print(mdcorealign.__version__)"
+          mdcorealign --help
+          mdcorealign align --help
+          mdcorealign flexibility --help
+          mdcorealign diagnostics --help
+          mdcorealign audit-preprocessing --help
+          mdcorealign local-deformation --help
+          mdcorealign apply --help
+
+      - name: Run toy quickstart
+        run: bash examples/toy_md/run_quickstart.sh /tmp/mdcorealign-toy-output
+
+      - name: Run product-mode examples
+        run: |
+          bash examples/exact_cpu/run.sh /tmp/mdcorealign-exact-output
+          bash examples/throughput_cpu/run.sh /tmp/mdcorealign-throughput-output
+          bash examples/local_deformation/run.sh /tmp/mdcorealign-local-output
+          bash examples/apply_transforms/run.sh /tmp/mdcorealign-apply-output
+
+      - name: Run portable software tests
+        run: python -m pytest -q -m "not archive_qa" tests
+
+      - name: Public API and release-quality checks
+        run: |
+          python -m ruff check src/mdcorealign tests/public_stable_polish_v6
+          python -m mypy src/mdcorealign/__init__.py src/mdcorealign/output_schema.py
+
+      - name: Build package
+        run: |
+          python -m build
+          python -m twine check dist/*
+
+      - name: Check built wheel contract
+        run: |
+          MDCOREALIGN_WHEEL_UNDER_TEST="$(realpath dist/mdcorealign-*.whl)" python -m pytest -q tests/public_stable_polish_v6/test_public_stable_contract.py
