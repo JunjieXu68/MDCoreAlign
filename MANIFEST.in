@@ -19,3 +19,23 @@ include environment.yml
 include requirements-dev.txt
 include requirements-tested.txt
 include release_checklist.md
+
+# Full-source research tests remain in Git unchanged. They are not applicable
+# to the sdist, which intentionally excludes mdstablecore and five research modules.
+exclude tests/test_alignment.py
+exclude tests/test_soft_superposition.py
+exclude tests/test_synthetic_pipeline.py
+exclude tests/guarded_fast_global_v1/test_guarded_cascade.py
+exclude tests/no_materialisation_v1/test_benchmark_minimal.py
+exclude tests/post_b3_optimisation_v1/test_experimental_gpu_batch.py
+exclude tests/stream_align_v1/test_stream_alignment.py
+exclude tests/throughput_v2_sparse_keyframe/test_experimental_throughput_v2.py
+exclude tests/analysis/test_core_disagreement_sensitivity_sampling_v1.py
+# These tests transitively import benchmark_minimal through source-only helpers.
+exclude tests/analysis/test_biological_core_validation_v1.py
+exclude tests/analysis/test_core_disagreement_rmsf_v1.py
+exclude tests/analysis/test_core_disagreement_sensitivity_v1.py
+exclude tests/test_atlas_strict_single_thread_cpu_v1.py
+exclude tests/test_atlas_untimed_export_recovery.py
+# This build-hook regression requires the original five excluded module files.
+exclude tests/packaging/test_build_surface.py

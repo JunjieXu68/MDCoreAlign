@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0rc7 - Complete source-distribution test contract
+
+- Retain all full-source research tests in Git while excluding tests that depend
+  on intentionally unshipped research modules from the source distribution.
+- Verify the actual sdist test import surface and the original shipped-test
+  policy; retain rc6 builds and acceptance logs as intermediate evidence.
+- Runtime algorithms and default scientific parameters are unchanged from rc6.
+
 ## 0.1.0rc6 - Interface and distribution candidate
 
 - Forwarded explicit robust-loss scales through CPU/GPU public entry points,
@@ -65,7 +73,7 @@ Initial release candidate for user testing.
 <!-- BEGIN MDCOREALIGN_RELEASE_METADATA -->
 ## Release-Candidate Metadata
 
-- Current delivery candidate: `0.1.0rc6` (publication status recorded separately)
+- Current delivery candidate: `0.1.0rc7` (publication status recorded separately)
 - Repository: `pending`
 - Zenodo DOI: `pending`
 - TestPyPI URL: `pending`

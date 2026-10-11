@@ -46,8 +46,26 @@ counts. A source test, a CPU test, an optional-GPU test and an installed-wheel
 test are separate scopes. No test count from a prior candidate is evidence for
 the current one. Local acceptance does not establish a green remote CI run.
 
-The release sdist supplies portable inputs and public regression files, but its
-excluded research modules are intentionally absent. Use the full Git checkout
-for the complete development suite; for installed-product acceptance from an
-extracted sdist run `tests/fix_and_release` and `tests/m8_delivery` with the
-installed package, from outside the development source tree.
+The release sdist supplies portable inputs and public regression files. Fifteen
+source-only test files are explicitly excluded by `MANIFEST.in`: fourteen
+depend directly or through research helpers on intentionally unshipped modules;
+one build-hook test requires the original excluded module files. Their original
+assertions and files remain unchanged in Git. Use the full Git checkout for the
+complete development suite. For installed-product acceptance from an extracted
+sdist, run `tests/fix_and_release` and `tests/m8_delivery` with the installed
+package, from outside the development source tree.
+
+The shipped-test dependency policy follows imports through included local
+helpers and must also run against the actual release archive:
+
+```bash
+MDCOREALIGN_SDIST_UNDER_TEST=/absolute/path/to/candidate.tar.gz \
+  python -m pytest -q tests/packaging/test_sdist_test_surface.py
+```
+
+Without that variable, the same tests exercise the real setuptools manifest
+expansion in a checkout; this is a source regression, not artifact acceptance.
+Neither branch skips. Release acceptance additionally collects tests from the
+actual extracted sdist and executes its existing shipped-import policy in the
+assembled package layout. Passing archive-dependent scientific QA still needs
+the separately recorded historical fixtures.
