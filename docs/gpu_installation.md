@@ -10,7 +10,7 @@ wheel does not contain the `examples/` directory.
 ```bash
 python -m venv .venv-gpu
 . .venv-gpu/bin/activate
-python -m pip install dist/mdcorealign-0.1.0rc7-py3-none-any.whl
+python -m pip install dist/mdcorealign-0.1.0rc8-py3-none-any.whl
 python -m pip install "cupy-cuda12x>=13,<14"
 mdcorealign doctor
 mdcorealign align --input examples/toy_md/toy_ca_trajectory.pdb \

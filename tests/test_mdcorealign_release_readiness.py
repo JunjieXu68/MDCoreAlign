@@ -36,14 +36,14 @@ class MDCoreAlignReleaseReadinessTest(unittest.TestCase):
             capture_output=True,
             text=True,
         )
-        self.assertIn("0.1.0rc6", completed.stdout)
+        self.assertIn("0.1.0rc8", completed.stdout)
 
     def test_pyproject_metadata_and_console_script(self) -> None:
         """Package metadata should expose the user-facing CLI."""
 
         data = tomllib.loads((ROOT / "pyproject.toml").read_text())
         self.assertEqual(data["project"]["name"], "mdcorealign")
-        self.assertEqual(data["project"]["version"], "0.1.0rc6")
+        self.assertEqual(data["project"]["version"], "0.1.0rc8")
         self.assertEqual(data["project"]["scripts"]["mdcorealign"], "mdcorealign.cli:main")
         self.assertIn("dev", data["project"]["optional-dependencies"])
         self.assertIn("external", data["project"]["optional-dependencies"])

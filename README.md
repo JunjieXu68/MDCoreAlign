@@ -58,7 +58,7 @@ venv and pip. With the local delivery candidate wheel in `dist/`:
 ```bash
 python -m venv .venv
 . .venv/bin/activate
-python -m pip install dist/mdcorealign-0.1.0rc7-py3-none-any.whl
+python -m pip install dist/mdcorealign-0.1.0rc8-py3-none-any.whl
 mdcorealign doctor
 ```
 
@@ -67,7 +67,7 @@ supports the complete CPU and coordinate-I/O product. For the validated CUDA-12
 route, install the same wheel with its `cuda12` extra:
 
 ```bash
-python -m pip install "dist/mdcorealign-0.1.0rc7-py3-none-any.whl[cuda12]"
+python -m pip install "dist/mdcorealign-0.1.0rc8-py3-none-any.whl[cuda12]"
 mdcorealign doctor
 ```
 
@@ -81,7 +81,7 @@ extras remain no-op compatibility aliases.
 ```bash
 conda env create -f environment.yml
 conda activate mdcorealign-vt02-2
-python -m pip install --no-deps dist/mdcorealign-0.1.0rc7-py3-none-any.whl
+python -m pip install --no-deps dist/mdcorealign-0.1.0rc8-py3-none-any.whl
 ```
 
 Developers working from the source directory can use `python -m pip install
@@ -279,7 +279,7 @@ reference solutions for MDCoreAlign and MDLovoFit. Runtime claims must use
 matched inputs and output contracts; no universal-fastest claim is made.
 
 See `CITATION.cff` for citation metadata. The current local delivery candidate
-is `0.1.0rc7`, not a stable release. The preserved historical VT02.2 package
+is `0.1.0rc8`, not a stable release. The preserved historical VT02.2 package
 uses `0.1.0rc4` and does not include the M8 support delivered here. The accompanying
 `RELEASE_READINESS.md` records the actual source commit, publication status and
 artifact hashes. A candidate version alone does not establish a public release.

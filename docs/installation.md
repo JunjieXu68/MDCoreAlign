@@ -6,7 +6,7 @@ This document does not claim that the candidate is published on PyPI.
 ```bash
 python -m venv .venv
 . .venv/bin/activate
-python -m pip install /path/to/mdcorealign-0.1.0rc7-py3-none-any.whl
+python -m pip install /path/to/mdcorealign-0.1.0rc8-py3-none-any.whl
 python -m pip check
 mdcorealign --help
 mdcorealign doctor
@@ -17,7 +17,7 @@ analysis and coordinate I/O. GPU execution uses the same MDCoreAlign wheel with
 the optional CUDA 12 dependency:
 
 ```bash
-python -m pip install "/path/to/mdcorealign-0.1.0rc7-py3-none-any.whl[cuda12]"
+python -m pip install "/path/to/mdcorealign-0.1.0rc8-py3-none-any.whl[cuda12]"
 mdcorealign doctor
 ```
 

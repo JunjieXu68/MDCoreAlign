@@ -43,10 +43,10 @@ def test_cuda12_extra_is_specific_and_bounded() -> None:
 
 def test_release_identity_and_schema_are_independent() -> None:
     project = _project()
-    assert project["version"] == "0.1.0rc6"
+    assert project["version"] == "0.1.0rc8"
     namespace = (ROOT / "src/mdcorealign/__init__.py").read_text()
     schema = (ROOT / "src/mdcorealign/output_schema.py").read_text()
-    assert '__version__ = "0.1.0rc6"' in namespace
+    assert '__version__ = "0.1.0rc8"' in namespace
     assert 'SCHEMA_VERSION = "1.1.0"' in schema
 
 
@@ -56,4 +56,4 @@ def test_readme_is_pip_first_and_conda_optional() -> None:
     conda_heading = readme.index("### Conda (optional)")
     assert pip_heading < conda_heading
     assert "Conda is optional" in readme
-    assert "mdcorealign-0.1.0rc6-py3-none-any.whl[cuda12]" in readme
+    assert "mdcorealign-0.1.0rc8-py3-none-any.whl[cuda12]" in readme

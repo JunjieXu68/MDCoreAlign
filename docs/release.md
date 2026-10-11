@@ -1,6 +1,6 @@
 # Release Candidate Process
 
-The current candidate is `0.1.0rc7`. It includes parameter and input/export
+The current candidate is `0.1.0rc8`. It includes parameter and input/export
 contract fixes while retaining default M4 and actual M8 execution. It is not a
 final stable release. Historical VT02.2 / `0.1.0rc4` and the distinct M8-only
 `0.1.0rc5` artifacts must remain unchanged. VT02.2 does not include the current
@@ -34,7 +34,7 @@ technical retrieval, not another person's access to a private repository.
 <!-- BEGIN MDCOREALIGN_RELEASE_METADATA -->
 ## Release Metadata Status
 
-- Candidate: `0.1.0rc7`
+- Candidate: `0.1.0rc8`
 - Repository, full commit, tag and publication: see `RELEASE_READINESS.md`
 - Zenodo DOI: pending
 - PyPI/TestPyPI publication: not part of this candidate task

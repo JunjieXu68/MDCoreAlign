@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0rc8 - Final version-identity acceptance
+
+- Synchronize the three version-pinned regression files with the candidate
+  metadata, README, runtime and saved-output identity. Their assertions remain.
+- Retain rc6 and rc7 draft artifacts and acceptance attempts; do not overwrite
+  different package contents under a previously built candidate version.
+- Numerical runtime behavior is unchanged; final artifact acceptance is recorded
+  externally against the complete commit and package hashes.
+
 ## 0.1.0rc7 - Complete source-distribution test contract
 
 - Retain all full-source research tests in Git while excluding tests that depend
@@ -73,7 +82,7 @@ Initial release candidate for user testing.
 <!-- BEGIN MDCOREALIGN_RELEASE_METADATA -->
 ## Release-Candidate Metadata
 
-- Current delivery candidate: `0.1.0rc7` (publication status recorded separately)
+- Current delivery candidate: `0.1.0rc8` (publication status recorded separately)
 - Repository: `pending`
 - Zenodo DOI: `pending`
 - TestPyPI URL: `pending`

@@ -3,7 +3,7 @@
 ```bash
 python -m venv .venv-cpu
 . .venv-cpu/bin/activate
-python -m pip install dist/mdcorealign-0.1.0rc7-py3-none-any.whl
+python -m pip install dist/mdcorealign-0.1.0rc8-py3-none-any.whl
 mdcorealign align --help
 ```
 
