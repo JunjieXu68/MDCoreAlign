@@ -3,9 +3,13 @@
 from __future__ import annotations
 
 import json
+import os
 import re
+import shutil
+import sys
+import tarfile
 import zipfile
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 import pytest
 
@@ -13,6 +17,60 @@ from mdcorealign.cli import build_parser, run
 
 ROOT = Path(__file__).resolve().parents[2]
 TOY = ROOT / "examples/toy_md/toy_ca_trajectory.pdb"
+
+
+@pytest.fixture(autouse=True)
+def _selected_distribution(request, tmp_path, monkeypatch, record_property) -> None:
+    """Run the original assembly assertions on explicitly selected real artifacts."""
+    if request.node.originalname not in {
+        "test_shipped_tests_do_not_import_excluded_mdstablecore",
+        "test_assembled_distribution_is_complete_when_present",
+    }:
+        return
+    wheel = os.environ.get("MDCOREALIGN_WHEEL_UNDER_TEST")
+    sdist = os.environ.get("MDCOREALIGN_SDIST_UNDER_TEST")
+    if not wheel and not sdist:
+        return  # Preserve the original assembled-checkout fallback.
+    if not wheel or not sdist:
+        raise pytest.UsageError("Assembly checks require both selected wheel and sdist paths")
+    assembly = tmp_path / "selected_distribution"
+    source = assembly / "source"
+    source.mkdir(parents=True)
+    with tarfile.open(sdist) as archive:
+        members = archive.getmembers()
+        roots = set()
+        destinations = set()
+        for member in members:
+            path = PurePosixPath(member.name)
+            if path.is_absolute() or not path.parts or ".." in path.parts:
+                raise ValueError(f"Unsafe source archive path: {member.name}")
+            if not (member.isdir() or member.isfile()):
+                raise ValueError(f"Non-regular source archive member: {member.name}")
+            roots.add(path.parts[0])
+            relative = Path(*path.parts[1:])
+            if relative in destinations:
+                raise ValueError(f"Duplicate source archive path: {member.name}")
+            destinations.add(relative)
+        if len(roots) != 1:
+            raise ValueError("The selected sdist must contain one source root")
+        for member in members:
+            destination = source.joinpath(*PurePosixPath(member.name).parts[1:])
+            if member.isdir():
+                destination.mkdir(parents=True, exist_ok=True)
+            else:
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                stream = archive.extractfile(member)
+                if stream is None:
+                    raise ValueError(f"Unreadable source archive member: {member.name}")
+                with stream, destination.open("wb") as handle:
+                    shutil.copyfileobj(stream, handle)
+    dist = assembly / "dist"
+    dist.mkdir()
+    for artifact in (Path(wheel), Path(sdist)):
+        shutil.copyfile(artifact, dist / artifact.name)
+        record_property(f"selected_{'wheel' if artifact.suffix == '.whl' else 'sdist'}", str(artifact))
+    record_property("assembly_source", "selected_sdist_extracted_to_temporary_root")
+    monkeypatch.setattr(sys.modules[__name__], "ROOT", source)
 
 
 def _align(tmp_path: Path, *extra: str) -> Path:

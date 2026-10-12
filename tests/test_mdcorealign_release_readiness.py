@@ -21,7 +21,10 @@ class MDCoreAlignReleaseReadinessTest(unittest.TestCase):
         """Return an environment that can import the local src package."""
 
         env = os.environ.copy()
-        env["PYTHONPATH"] = f"{ROOT / 'src'}{os.pathsep}{env.get('PYTHONPATH', '')}"
+        if os.environ.get("MDCOREALIGN_TEST_LAYER", "product") == "product":
+            env.pop("PYTHONPATH", None)
+        else:
+            env["PYTHONPATH"] = f"{ROOT / 'src'}{os.pathsep}{env.get('PYTHONPATH', '')}"
         env["PYTHONDONTWRITEBYTECODE"] = "1"
         return env
 

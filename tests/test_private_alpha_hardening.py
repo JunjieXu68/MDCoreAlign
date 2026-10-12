@@ -20,10 +20,13 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def _env() -> dict[str, str]:
-    """Return an environment that imports the local src package."""
+    """Use the installed package in product tests; source imports require an explicit research layer."""
 
     env = os.environ.copy()
-    env["PYTHONPATH"] = f"{ROOT / 'src'}{os.pathsep}{env.get('PYTHONPATH', '')}"
+    if os.environ.get("MDCOREALIGN_TEST_LAYER", "product") == "product":
+        env.pop("PYTHONPATH", None)
+    else:
+        env["PYTHONPATH"] = f"{ROOT / 'src'}{os.pathsep}{env.get('PYTHONPATH', '')}"
     env["PYTHONDONTWRITEBYTECODE"] = "1"
     return env
 
@@ -463,10 +466,19 @@ class PrivateAlphaHardeningTest(unittest.TestCase):
         module = importlib.util.module_from_spec(spec)
         sys.modules["package_private_alpha_bundle"] = module
         spec.loader.exec_module(module)
-        module.main()
-        template = ROOT / "results" / "private_alpha_hardening" / "advisor_testing_template.tsv"
-        with template.open(newline="") as handle:
-            columns = list(csv.DictReader(handle, delimiter="\t").fieldnames or [])
+        # This historical generator is tested in a disposable root. It must
+        # never rewrite a checkout's previous results or advisor archives.
+        with tempfile.TemporaryDirectory() as tmpdir:
+            module.ROOT = Path(tmpdir)
+            module.OUT = module.ROOT / "results" / "private_alpha_hardening"
+            module.BUNDLE_DIR = module.OUT / "private_alpha_bundle"
+            module.ADVISOR_RESULTS = module.ROOT / "results" / "advisor_bundle"
+            module.DIST_ADVISOR = module.ROOT / "dist_advisor"
+            module.STAGING_ROOT = module.DIST_ADVISOR / module.ARCHIVE_BASENAME
+            module.main()
+            template = module.OUT / "advisor_testing_template.tsv"
+            with template.open(newline="") as handle:
+                columns = list(csv.DictReader(handle, delimiter="\t").fieldnames or [])
         self.assertEqual(columns, module.FEEDBACK_FIELDS)
 
 

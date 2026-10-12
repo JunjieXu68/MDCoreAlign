@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "default_layer": "product",
+  "description": "Explicit collection boundary; archive node declarations take precedence. All unlisted test files/nodes remain product. No assertions or thresholds are weakened.",
+  "research_files": [
+    {
+      "path": "tests/test_alignment.py",
+      "reason": "Tests the unshipped mdstablecore legacy research scaffold."
+    },
+    {
+      "path": "tests/test_soft_superposition.py",
+      "reason": "Tests the unshipped mdstablecore legacy research scaffold."
+    },
+    {
+      "path": "tests/test_synthetic_pipeline.py",
+      "reason": "Tests the unshipped mdstablecore legacy research scaffold."
+    },
+    {
+      "path": "tests/guarded_fast_global_v1/test_guarded_cascade.py",
+      "reason": "Tests excluded mdcorealign.guarded research estimator and persistent-worker contracts."
+    },
+    {
+      "path": "tests/no_materialisation_v1/test_benchmark_minimal.py",
+      "reason": "Tests excluded benchmark_minimal loader and estimator parity; comparisons with product API remain in explicit research tier."
+    },
+    {
+      "path": "tests/post_b3_optimisation_v1/test_experimental_gpu_batch.py",
+      "reason": "Tests excluded experimental_gpu_batch research implementation, retaining its existing genuine CUDA availability condition."
+    },
+    {
+      "path": "tests/stream_align_v1/test_stream_alignment.py",
+      "reason": "Tests excluded experimental_stream research implementation, including optional sparse-GPU parity."
+    },
+    {
+      "path": "tests/throughput_v2_sparse_keyframe/test_experimental_throughput_v2.py",
+      "reason": "Tests excluded experimental_throughput_v2 sparse/keyframe research implementation."
+    },
+    {
+      "path": "tests/analysis/test_core_disagreement_sensitivity_sampling_v1.py",
+      "reason": "Tests study sampler/interception adapter and cache against source-only solve_minimal_cpu."
+    },
+    {
+      "path": "tests/analysis/test_biological_core_validation_v1.py",
+      "reason": "Tests biological validation script geometry, selection, exported stock parsing and heldout-study adapter; transitive benchmark_minimal dependency, not product estimator implementation."
+    },
+    {
+      "path": "tests/analysis/test_core_disagreement_rmsf_v1.py",
+      "reason": "Tests core-disagreement study-specific RMSF adapter/neighborhood/schema; transitive benchmark_minimal dependency."
+    },
+    {
+      "path": "tests/analysis/test_core_disagreement_sensitivity_v1.py",
+      "reason": "Tests study-specific overlap/geometry decomposition/ranking; transitive biological adapter requires benchmark_minimal. Frozen configuration node remains archive."
+    },
+    {
+      "path": "tests/test_atlas_strict_single_thread_cpu_v1.py",
+      "reason": "Tests historical benchmark runner, stock-core parser, checkpoint and preregistration adapters that import benchmark_minimal; registered frozen-artifact nodes remain archive."
+    },
+    {
+      "path": "tests/test_atlas_untimed_export_recovery.py",
+      "reason": "Tests historical stock export/checkpoint recovery and fixed-panel prefetch; source adapter imports benchmark_minimal, frozen panel nodes remain archive."
+    },
+    {
+      "path": "tests/test_formal_flexibility_profiles.py",
+      "reason": "The two tests call only benchmark/formal_flexibility_profiles.py.infer_chain_values, a source-only formal-benchmark metadata helper; they do not invoke the installed product input reader."
+    }
+  ],
+  "research_nodes": [
+    {
+      "nodeid": "tests/scaling_optimization_v5/test_coordinate_unit_integrity.py::test_explicit_angstrom_metadata_is_never_rescaled",
+      "reason": "Tests source-only mdCATH dataset preparation/stitching helpers; the three direct coordinate_scale product tests in this file remain product."
+    },
+    {
+      "nodeid": "tests/scaling_optimization_v5/test_coordinate_unit_integrity.py::test_explicit_nanometer_metadata_is_converted_to_angstrom",
+      "reason": "Tests source-only mdCATH dataset preparation/stitching helpers; the three direct coordinate_scale product tests in this file remain product."
+    },
+    {
+      "nodeid": "tests/scaling_optimization_v5/test_coordinate_unit_integrity.py::test_transition_aligned_stitching_preserves_consistent_scale",
+      "reason": "Tests source-only mdCATH dataset preparation/stitching helpers; the three direct coordinate_scale product tests in this file remain product."
+    },
+    {
+      "nodeid": "tests/test_md_trajectory_focus.py::MDTrajectoryFocusTest::test_block_stride_prefix_and_overlap_helpers",
+      "reason": "Exercises historical md_trajectory_focus_common study partition/statistic helpers, not a shipped runtime entrypoint; source helper explicitly configures src."
+    },
+    {
+      "nodeid": "tests/test_md_trajectory_focus.py::MDTrajectoryFocusTest::test_optional_adk_missing_behavior_and_pca_toy_schema",
+      "reason": "Exercises historical ADK annotation/PCA study scripts that configure src; no public CLI/API estimator invocation."
+    },
+    {
+      "nodeid": "tests/test_paper_ready_analysis.py::PaperReadyAnalysisTest::test_stale_test_status_detection",
+      "reason": "Exercises the pre-manuscript repository-audit warning helper; the distinct numerical diagnostics invariance test remains product."
+    },
+    {
+      "nodeid": "tests/test_private_alpha_hardening.py::PrivateAlphaHardeningTest::test_private_alpha_bundle_template_schema",
+      "reason": "Exercises the historical private-alpha bundle-generation script; its generated output is isolated in a temporary root. All ten actual product/CLI hardening tests remain product."
+    },
+    {
+      "nodeid": "tests/test_plot_formal_flexibility_profiles.py::FormalFlexibilityPlotTest::test_figure_data_schema_from_toy_profile",
+      "reason": "Exercises the formal manuscript plotting script and its publication-table/figure contracts, not installed runtime computation; toy inputs and outputs remain temporary."
+    },
+    {
+      "nodeid": "tests/test_plot_formal_flexibility_profiles.py::FormalFlexibilityPlotTest::test_flexible_segment_shading_intervals_are_contiguous",
+      "reason": "Exercises the formal manuscript plotting script and its publication-table/figure contracts, not installed runtime computation; toy inputs and outputs remain temporary."
+    },
+    {
+      "nodeid": "tests/test_plot_formal_flexibility_profiles.py::FormalFlexibilityPlotTest::test_no_cross_chain_flexible_segment_merging",
+      "reason": "Exercises the formal manuscript plotting script and its publication-table/figure contracts, not installed runtime computation; toy inputs and outputs remain temporary."
+    },
+    {
+      "nodeid": "tests/test_plot_formal_flexibility_profiles.py::FormalFlexibilityPlotTest::test_script_execution_on_small_toy_dataset",
+      "reason": "Exercises the formal manuscript plotting script and its publication-table/figure contracts, not installed runtime computation; toy inputs and outputs remain temporary."
+    }
+  ],
+  "archive_files": [
+    {
+      "path": "tests/test_final_quality_upgrade.py",
+      "reason": "Every test in this module requires the explicitly enumerated frozen historical artifacts; archive nodes remain the authoritative per-test list."
+    },
+    {
+      "path": "tests/test_final_submission_upgrade.py",
+      "reason": "Every test in this module requires the explicitly enumerated frozen historical artifacts; archive nodes remain the authoritative per-test list."
+    },
+    {
+      "path": "tests/test_submission_critical_addendum.py",
+      "reason": "Every test in this module requires the explicitly enumerated frozen historical artifacts; archive nodes remain the authoritative per-test list."
+    },
+    {
+      "path": "tests/test_submission_polish.py",
+      "reason": "Every test in this module requires the explicitly enumerated frozen historical artifacts; archive nodes remain the authoritative per-test list."
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+# Full-checkout research/development tests; never normal user dependencies.
+-r requirements-ci-product.txt
+pandas>=2.2

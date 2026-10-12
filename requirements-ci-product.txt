@@ -1,0 +1,6 @@
+# Test-only dependencies. Install the non-editable product wheel separately.
+# Runtime dependencies are resolved from that wheel, not from a source overlay.
+pytest>=8,<10
+setuptools>=77
+matplotlib>=3.8
+h5py>=3.10

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import importlib.util
+import os
 import sys
 import unittest
 from pathlib import Path
@@ -10,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / "benchmark" / "formal_flexibility_profiles.py"
 SRC = ROOT / "src"
-if str(SRC) not in sys.path:
+if os.environ.get("MDCOREALIGN_TEST_LAYER", "product") != "product" and str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
 

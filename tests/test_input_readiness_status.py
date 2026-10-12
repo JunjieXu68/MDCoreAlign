@@ -24,7 +24,10 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def _env() -> dict[str, str]:
     env = os.environ.copy()
-    env["PYTHONPATH"] = f"{ROOT / 'src'}{os.pathsep}{env.get('PYTHONPATH', '')}"
+    if os.environ.get("MDCOREALIGN_TEST_LAYER", "product") == "product":
+        env.pop("PYTHONPATH", None)
+    else:
+        env["PYTHONPATH"] = f"{ROOT / 'src'}{os.pathsep}{env.get('PYTHONPATH', '')}"
     env["PYTHONDONTWRITEBYTECODE"] = "1"
     return env
 

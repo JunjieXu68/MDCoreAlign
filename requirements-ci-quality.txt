@@ -1,0 +1,7 @@
+# Explicit build and quality toolchain, independent of rc8 package metadata.
+setuptools>=77
+wheel>=0.43
+build>=1.2
+twine>=5
+ruff>=0.12
+mypy>=1.10

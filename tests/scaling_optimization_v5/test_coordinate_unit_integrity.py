@@ -8,12 +8,6 @@ from mdsuperpose.coordinate_scale import (
     audit_coordinate_scale,
     chain_aware_adjacent_pairs,
 )
-from scripts.mdcath_benchmark.build_transition_aligned_stitched_trajectory import (
-    build_transition_aligned,
-)
-from scripts.mdcath_benchmark.mdcath_common import (
-    maybe_convert_units_to_angstrom,
-)
 
 
 def _ca_trajectory(n_frames: int = 8, n_residues: int = 12) -> np.ndarray:
@@ -25,6 +19,8 @@ def _ca_trajectory(n_frames: int = 8, n_residues: int = 12) -> np.ndarray:
 
 
 def test_explicit_angstrom_metadata_is_never_rescaled() -> None:
+    from scripts.mdcath_benchmark.mdcath_common import maybe_convert_units_to_angstrom
+
     coords = _ca_trajectory()
     observed, status = maybe_convert_units_to_angstrom(
         coords, {"unit": "Angstrom"}
@@ -34,6 +30,8 @@ def test_explicit_angstrom_metadata_is_never_rescaled() -> None:
 
 
 def test_explicit_nanometer_metadata_is_converted_to_angstrom() -> None:
+    from scripts.mdcath_benchmark.mdcath_common import maybe_convert_units_to_angstrom
+
     coords_nm = _ca_trajectory() / 10.0
     observed, status = maybe_convert_units_to_angstrom(
         coords_nm, {"unit": "nm"}
@@ -73,6 +71,10 @@ def test_valid_angstrom_trajectory_passes_chain_aware_guard() -> None:
 
 
 def test_transition_aligned_stitching_preserves_consistent_scale() -> None:
+    from scripts.mdcath_benchmark.build_transition_aligned_stitched_trajectory import (
+        build_transition_aligned,
+    )
+
     coords = _ca_trajectory(n_frames=6)
     metadata = [
         {"chain": "A", "residue_id": str(i + 1), "resname": "ALA"}

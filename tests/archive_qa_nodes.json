@@ -1,5 +1,5 @@
 {
-  "description": "Explicit frozen research QA tier; ordinary tests remain unmarked; no automatic skip or altered assertion. Run pytest -m archive_qa with local results fixtures.",
+  "description": "Frozen research-artifact QA, selected explicitly with --test-layer=archive. Original assertions are preserved; absent fixtures are not product failures.",
   "tests": [
     {
       "nodeid": "tests/analysis/test_core_disagreement_sensitivity_v1.py::test_frozen_case_native_rounding_splits_and_frameworks",
@@ -463,6 +463,22 @@
       "reason": "Historical figure-data artifact QA; an absent directory previously allowed its unchanged glob loop to pass without checking any table. It is not portable software validation.",
       "fixture_locations": [
         "results/flexibility/figure_data/*.tsv"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_final_quality_upgrade.py::FinalQualityUpgradeTest::test_final_audit_has_no_blockers_when_generated",
+      "reason": "Reads an existing historical final-audit artifact; prior absence-triggered skip is preserved and no longer reported as product coverage.",
+      "fixture_locations": [
+        "results/final_quality_upgrade/final_audit/blockers.json"
+      ],
+      "original_assertions_preserved": true
+    },
+    {
+      "nodeid": "tests/test_final_submission_upgrade.py::FinalSubmissionUpgradeTest::test_final_submission_audit_when_generated",
+      "reason": "Reads an existing historical final-audit artifact; prior absence-triggered skip is preserved and no longer reported as product coverage.",
+      "fixture_locations": [
+        "results/final_submission_upgrade/final_audit/blockers.json"
       ],
       "original_assertions_preserved": true
     }

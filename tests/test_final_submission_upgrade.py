@@ -5,6 +5,7 @@ from __future__ import annotations
 import csv
 import importlib.util
 import json
+import os
 import sys
 import unittest
 from pathlib import Path
@@ -13,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = ROOT / "scripts"
 SRC = ROOT / "src"
 for path in (SCRIPTS, SRC):
-    if str(path) not in sys.path:
+    if (path != SRC or os.environ.get("MDCOREALIGN_TEST_LAYER", "product") != "product") and str(path) not in sys.path:
         sys.path.insert(0, str(path))
 
 
