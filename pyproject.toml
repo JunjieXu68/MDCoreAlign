@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mdcorealign"
-version = "0.1.0rc8"
+version = "1.0.0"
 description = "Continuous-weight alignment and flexibility profiling for protein conformational ensembles"
 readme = "README.md"
 license = "MIT"
@@ -20,7 +20,6 @@ keywords = [
   "structural-bioinformatics",
 ]
 classifiers = [
-  "Development Status :: 3 - Alpha",
   "Intended Audience :: Science/Research",
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3.11",

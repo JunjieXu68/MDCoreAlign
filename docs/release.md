@@ -1,42 +1,73 @@
-# Release Candidate Process
+# Release process and identity
 
-The current candidate is `0.1.0rc8`. It includes parameter and input/export
-contract fixes while retaining default M4 and actual M8 execution. It is not a
-final stable release. Historical VT02.2 / `0.1.0rc4` and the distinct M8-only
-`0.1.0rc5` artifacts must remain unchanged. VT02.2 does not include the current
-M8 support; rc5 does not include the interface fixes delivered in rc6.
+This source tree identifies MDCoreAlign as version `1.0.0`. Its numerical
+implementation, default scientific parameters and output schema are unchanged
+from the maintained rc8 runtime. The version update and installation guidance
+do not establish that historical scientific analyses were rerun with 1.0.0.
+Historical VT02.2 (`0.1.0rc4`) and later candidate artifacts retain their original
+identities: VT02.2 predates current M8 support, and rc5 predates the interface
+fixes delivered in rc6.
 
-Build the final direct wheel and sdist from a clean checkout of the full source
-commit named in the acceptance record. Extract that sdist to another clean
-directory and build its wheel. Compare runtime module names and bytes, package
-metadata and entry points. The five excluded research modules remain in the
-development source tree, outside the installed runtime surface.
+The official repository is
+[github.com/JunjieXu68/MDCoreAlign](https://github.com/JunjieXu68/MDCoreAlign).
+The [v1.0.0 Release](https://github.com/JunjieXu68/MDCoreAlign/releases/tag/v1.0.0)
+is the publication record for the tag, associated source commit, downloadable
+assets and validation evidence. Verify that record and its asset hashes before
+attributing a local package to the release. This document specifies the release
+checks; it does not assert that an unpublished build or unfinished check passed.
 
-Run the portable software suite, then install each build route into independent
-environments. Invoke the installed CLI from outside the source tree, without
-source `PYTHONPATH` or user-site imports. Verify actual update counts and delta
-values in CPU/GPU kernels, input replay and coordinate export. Report unavailable
-backends explicitly. Run the shipped examples from the matching source delivery.
-See [testing.md](testing.md) for the separate archive QA tier.
+## Build and validate
 
-The accompanying `RELEASE_READINESS.md` is the authoritative delivery record:
-it lists full Git commit, candidate tag if created, wheel/sdist SHA256, exact
-test scopes, limitations and publication status. File hashes are not Git
-commits. A local commit and local acceptance are not a GitHub publication.
+Build the direct wheel and sdist from a clean checkout of the full source commit
+being released. Extract that sdist into another clean directory and build its
+wheel. Compare runtime module names and bytes, package metadata and entry points.
+The five excluded research modules remain in the full development source tree,
+outside the installed runtime surface.
 
-Publish only to a confirmed repository with known visibility and adequate
-permission. Preserve existing remote history. Review the exact staged files
-and pending history for credentials, private documents and excluded data.
-After push/tag/prerelease, verify the remote commit and tag target, release
-flags and downloaded asset hashes. A fresh-clone/install check establishes
-technical retrieval, not another person's access to a private repository.
+Install the selected artifacts into independent environments. Invoke the
+installed CLI from outside the source tree, without source `PYTHONPATH` or
+user-site imports. Run the installed-product suite against the explicit wheel
+and sdist, followed by the separate source-research tests. Verify actual update
+counts and delta values, input replay and coordinate export. Report unavailable
+backends explicitly; CPU CI does not establish real-GPU validation. Run shipped
+examples from the matching source delivery. See
+[CI testing boundaries](ci-testing.md) for commands, package identity checks and
+the separate historical-artifact tier.
+
+Before a new tag exists remotely, validate the proposed local source commit and
+its built artifacts. After publication, check installation from the actual tag
+and the downloaded release assets. Preserve failures and distinguish the local
+pre-publication checks from this remote verification.
+
+## Publish and archive
+
+Preserve remote history and existing release assets. Review staged files for
+credentials, private documents and excluded data before publishing. After the
+push, tag and release, verify the remote commit and tag target, release flags
+and downloaded asset hashes. A Git commit, package SHA-256 and Zenodo DOI identify
+different objects; none is a substitute for the others.
+
+Use the assigned Zenodo release record when it becomes available and then record
+its actual DOI. No DOI is invented or inferred from repository integration being
+enabled. PyPI/TestPyPI publication is not claimed by this release workflow; the
+[README](../README.md) documents fixed-tag GitHub installation.
+
+## Historical scientific evidence
+
+Archived scientific tables, figures and timings keep their original code,
+input, parameter and execution provenance. A software test pass or a 1.0.0
+release identity does not reproduce those results. Source-research tests check
+helper implementations; historical-artifact QA checks existing artifacts and
+requires their declared fixtures. Neither scope silently launches a benchmark
+or regenerates historical evidence.
 
 <!-- BEGIN MDCOREALIGN_RELEASE_METADATA -->
-## Release Metadata Status
+## Current Release Metadata
 
-- Candidate: `0.1.0rc8`
-- Repository, full commit, tag and publication: see `RELEASE_READINESS.md`
-- Zenodo DOI: pending
-- PyPI/TestPyPI publication: not part of this candidate task
-
+- Version: `1.0.0`
+- Release date: `2026-10-12`
+- Repository: <https://github.com/JunjieXu68/MDCoreAlign>
+- Tag, commit and assets: <https://github.com/JunjieXu68/MDCoreAlign/releases/tag/v1.0.0>
+- Zenodo DOI: see the linked GitHub Release for the assigned archival DOI
+- PyPI/TestPyPI publication: not claimed
 <!-- END MDCOREALIGN_RELEASE_METADATA -->

@@ -115,7 +115,7 @@ def test_align_writes_versioned_source_manifest_without_coordinates(tmp_path: Pa
     summary = json.loads((result / "summary.json").read_text())
     manifest = json.loads((result / "diagnostics/source_manifest.json").read_text())
     assert summary["schema_version"] == "1.1.0"
-    assert summary["software_version"] == "0.1.0rc8"
+    assert summary["software_version"] == "1.0.0"
     assert summary["fit_selection"] == "protein and name CA"
     assert summary["analysis_coordinate_selection"] == "protein and name CA"
     assert summary["n_fit_atoms"] == n_ca
@@ -126,7 +126,7 @@ def test_align_writes_versioned_source_manifest_without_coordinates(tmp_path: Pa
     assert "apply_selection" not in summary
     assert "n_apply_atoms" not in summary
     assert manifest["schema_version"] == SOURCE_MANIFEST_SCHEMA_VERSION
-    assert manifest["software_version"] == "0.1.0rc8"
+    assert manifest["software_version"] == "1.0.0"
     assert manifest["source_result_schema_version"] == "1.1.0"
     assert manifest["fit_selection"] == "protein and name CA"
     assert manifest["analysis_coordinate_selection"] == "protein and name CA"

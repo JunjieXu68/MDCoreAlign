@@ -30,7 +30,7 @@ from .gpu_backend import (
 from .input_validation import InputReadiness, classify_input
 from .output_schema import SCHEMA_VERSION
 
-__version__ = "0.1.0rc8"
+__version__ = "1.0.0"
 
 __all__ = [
     "ArrayCoordinateSource",

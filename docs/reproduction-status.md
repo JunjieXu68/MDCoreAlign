@@ -1,0 +1,5 @@
+# Historical numerical replay and release verification
+
+A historical replay performed on 23 September 2026 recomputed the CPU-throughput weight vectors for the original 48 ATLAS workload settings (eight systems and six trajectory prefixes). All 48 vectors matched the raw float64 weight-byte SHA256 values recorded by the original timing runs. The replay used the historical source snapshot, identical pre-centred Cα inputs, the frame-zero reference, K=min(T,256), and M=4. It did not rerun the timing benchmark.
+
+This historical replay is distinct from installation checks and software regression tests of the current release. The release has not been shown to regenerate every manuscript result. The 48-vector count must not be interpreted as 48 independent protein systems, a count of all reproduced manuscript outputs, or a replay performed using v1.0.0. The 12 October 2026 review checked the stored replay arrays against the original timing hashes; it did not execute those 48 calculations again.

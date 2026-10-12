@@ -11,7 +11,7 @@ The existing Linux CPU matrix retains Python 3.11, 3.12 and 3.13 with
 `fail-fast: false`. Each interpreter installs `requirements-ci-product.txt`
 for product tests and `requirements-ci-quality.txt` for build/lint/type checks.
 Research tests additionally install `requirements-ci-research.txt`. These files
-are CI dependencies, not new ordinary-user requirements or changes to rc8's
+are CI dependencies, not new ordinary-user requirements or changes to ordinary-user
 package metadata. In particular, setuptools is an explicit test dependency;
 an isolated build dependency does not install it into the test interpreter.
 
@@ -27,7 +27,7 @@ source /tmp/mdcorealign-ci-env-NEW/bin/activate
 python -m pip install -r requirements-ci-product.txt -r requirements-ci-quality.txt
 python -m build
 python -m twine check dist/*
-python -m pip install dist/mdcorealign-0.1.0rc8-py3-none-any.whl
+python -m pip install dist/mdcorealign-1.0.0-py3-none-any.whl
 python -m pip check
 ```
 
@@ -35,18 +35,18 @@ Then run the selected wheel's tests, supplying its real hashes:
 
 ```bash
 python tools/ci/run_tests.py --test-layer product \
-  --artifact-kind candidate --expected-version 0.1.0rc8 \
-  --wheel /absolute/path/mdcorealign-0.1.0rc8-py3-none-any.whl \
+  --artifact-kind candidate --expected-version 1.0.0 \
+  --wheel /absolute/path/mdcorealign-1.0.0-py3-none-any.whl \
   --expected-wheel-sha256 ACTUAL_SHA256 \
-  --sdist /absolute/path/mdcorealign-0.1.0rc8.tar.gz \
+  --sdist /absolute/path/mdcorealign-1.0.0.tar.gz \
   --expected-sdist-sha256 ACTUAL_SDIST_SHA256 \
   --output-dir /tmp/mdcorealign-product-NEW
 ```
 
 `candidate` identifies the wheel built from the current CI checkout. To validate
-the already published rc8 release, use `--artifact-kind release` and the actual
+a published release, use `--artifact-kind release` and the actual
 independently downloaded release wheel and its accepted SHA256. The runner does
-not download, build, install or silently replace packages. A published rc8 wheel
+not download, build, install or silently replace packages. A previously published wheel
 is not evidence that a newly changed runtime implementation works.
 
 The optional paired `--sdist` and `--expected-sdist-sha256` arguments select the

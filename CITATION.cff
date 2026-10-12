@@ -1,7 +1,10 @@
 cff-version: 1.2.0
 message: "If you use MDCoreAlign, please cite this software release."
 title: "MDCoreAlign: continuous-weight alignment and flexibility profiling for protein conformational ensembles"
-version: 0.1.0rc8
+version: 1.0.0
+date-released: 2026-10-12
+repository-code: "https://github.com/JunjieXu68/MDCoreAlign"
+url: "https://github.com/JunjieXu68/MDCoreAlign/releases/tag/v1.0.0"
 license: MIT
 authors:
   - name: "MDCoreAlign developers"

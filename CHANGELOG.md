@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.0.0 - 2026-10-12
+
+- Set the software release identity to 1.0.0 and document installation from the
+  official repository at the fixed `v1.0.0` tag, including the CUDA-12 extra.
+- Update citation and release metadata without changing the maintained rc8
+  numerical implementation, default parameters or output schema.
+- Keep the installed-product, source-research and historical-artifact CI scopes
+  separate. CI reads the expected package version from project metadata.
+- Preserve historical candidate records. Software release validation is not a
+  claim that historical manuscript analyses were reproduced with version 1.0.0.
+
 ## 0.1.0rc8 - Final version-identity acceptance
 
 - Synchronize the three version-pinned regression files with the candidate
@@ -80,11 +91,13 @@ Initial release candidate for user testing.
 - Added CPU/GPU throughput, exact, local-deformation, and apply examples.
 
 <!-- BEGIN MDCOREALIGN_RELEASE_METADATA -->
-## Release-Candidate Metadata
+## Current Release Metadata
 
-- Current delivery candidate: `0.1.0rc8` (publication status recorded separately)
-- Repository: `pending`
-- Zenodo DOI: `pending`
-- TestPyPI URL: `pending`
-- This release candidate includes package installation, CLI, toy quickstart, clean-install validation, build/twine checks, and manuscript-readiness audit artifacts.
+- Version: `1.0.0`
+- Release date: `2026-10-12`
+- Repository: <https://github.com/JunjieXu68/MDCoreAlign>
+- Tag and assets: <https://github.com/JunjieXu68/MDCoreAlign/releases/tag/v1.0.0>
+- Zenodo DOI: see the linked GitHub Release for the assigned archival DOI
+- PyPI/TestPyPI publication is not claimed; installation uses the GitHub tag or release assets.
+- Actual validation and artifact identity are recorded with the published release; historical results retain their original provenance.
 <!-- END MDCOREALIGN_RELEASE_METADATA -->

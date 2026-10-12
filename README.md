@@ -52,36 +52,49 @@ than the first-screen interface.
 
 ### Pip and venv (primary)
 
-Conda is optional. MDCoreAlign can be installed and used with standard Python
-venv and pip. With the local delivery candidate wheel in `dist/`:
+Conda is optional. Use Python 3.11 or newer with venv and pip. The recommended
+installation uses the official repository and the fixed release tag:
 
 ```bash
+git clone https://github.com/JunjieXu68/MDCoreAlign.git
+cd MDCoreAlign
+git checkout v1.0.0
 python -m venv .venv
 . .venv/bin/activate
-python -m pip install dist/mdcorealign-0.1.0rc8-py3-none-any.whl
+python -m pip install .
 mdcorealign doctor
 ```
 
-The base wheel installs NumPy, SciPy, MDAnalysis and Gemmi and immediately
-supports the complete CPU and coordinate-I/O product. For the validated CUDA-12
-route, install the same wheel with its `cuda12` extra:
+This installs NumPy, SciPy, MDAnalysis and Gemmi for the complete CPU and
+coordinate-I/O product. On a compatible CUDA-12 system, install the `cuda12`
+extra from the same checked-out tag:
 
 ```bash
-python -m pip install "dist/mdcorealign-0.1.0rc8-py3-none-any.whl[cuda12]"
+python -m pip install '.[cuda12]'
 mdcorealign doctor
 ```
 
-For a future package-index release, the corresponding command is `python -m
-pip install "mdcorealign[cuda12]"`. The same MDCoreAlign wheel is used for CPU
-and GPU; CuPy is not a base dependency. The historical `[io]` and `[external]`
-extras remain no-op compatibility aliases.
+CPU and GPU use the same MDCoreAlign package; CuPy is not a base dependency.
+The historical `[io]` and `[external]` extras remain no-op compatibility aliases.
+
+For an installation without a retained source checkout, use the same fixed tag:
+
+```bash
+python -m pip install 'git+https://github.com/JunjieXu68/MDCoreAlign.git@v1.0.0'
+```
+
+Matching wheel and source archives are listed on the
+[1.0.0 GitHub Release](https://github.com/JunjieXu68/MDCoreAlign/releases/tag/v1.0.0).
+These instructions use GitHub; they do not require or claim a PyPI publication.
 
 ### Conda (optional)
 
+From the same checked-out source directory:
+
 ```bash
 conda env create -f environment.yml
-conda activate mdcorealign-vt02-2
-python -m pip install --no-deps dist/mdcorealign-0.1.0rc8-py3-none-any.whl
+conda activate mdcorealign
+python -m pip install --no-deps .
 ```
 
 Developers working from the source directory can use `python -m pip install
@@ -278,9 +291,18 @@ Frozen comparisons support related but non-identical, method-dependent stable
 reference solutions for MDCoreAlign and MDLovoFit. Runtime claims must use
 matched inputs and output contracts; no universal-fastest claim is made.
 
-See `CITATION.cff` for citation metadata. The current local delivery candidate
-is `0.1.0rc8`, not a stable release. The preserved historical VT02.2 package
-uses `0.1.0rc4` and does not include the M8 support delivered here. The accompanying
-`RELEASE_READINESS.md` records the actual source commit, publication status and
-artifact hashes. A candidate version alone does not establish a public release.
-The DOI remains pending.
+See [CITATION.cff](CITATION.cff) for version 1.0.0 citation metadata and the
+[GitHub Release](https://github.com/JunjieXu68/MDCoreAlign/releases/tag/v1.0.0)
+for the tag, source identity, assets and published validation record. The
+archival DOI, when assigned, is recorded on that linked GitHub Release page.
+
+Version 1.0.0 retains the numerical implementation and default scientific
+parameters of the maintained rc8 runtime. Version and installation-documentation
+updates do not constitute a new reproduction of historical scientific results.
+The preserved VT02.2 (`0.1.0rc4`) package predates the current M8 support and
+interface fixes. Historical analyses require their recorded code, inputs,
+parameters and artifacts; software acceptance tests alone do not reproduce them.
+See [CI testing boundaries](docs/ci-testing.md) for the separate product,
+source-research and historical-artifact checks.
+See [historical reproduction status](docs/reproduction-status.md) for the
+verified scope and limitations of the retained scientific evidence.
